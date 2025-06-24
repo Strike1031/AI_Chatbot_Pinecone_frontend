@@ -281,14 +281,14 @@ def main():
         if st.button("🆕 New Session", use_container_width=True):
             if create_session():
                 st.success("New session created!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Failed to create session")
         
         if st.button("🗑️ Clear Conversation", use_container_width=True):
             if st.session_state.session_id:
                 clear_conversation()
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.warning("No active session")
         
@@ -297,7 +297,7 @@ def main():
             if st.session_state.session_id:
                 if load_conversation_history():
                     st.success("Conversation history refreshed!")
-                    st.experimental_rerun()
+                    st.rerun()
                 else:
                     st.error("Failed to refresh history")
             else:
@@ -312,7 +312,7 @@ def main():
             if create_session():
                 st.success("Session created! You can now start chatting.")
                 # Force a rerun to show the chat input
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Failed to create session")
         return
@@ -377,7 +377,7 @@ def main():
         # Refresh memory stats
         if st.button("🔄 Refresh Memory Stats"):
             st.session_state.memory_stats = get_memory_stats()
-            st.experimental_rerun()
+            st.rerun()
         
         # Display memory stats in a nice grid
         if st.session_state.memory_stats:
@@ -522,7 +522,7 @@ def main():
                 st.session_state.memory_stats = get_memory_stats()
                 
                 # Force rerun to show the new messages immediately
-                st.experimental_rerun()
+                st.rerun()
                 
             else:
                 # Remove the user message if response failed
