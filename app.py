@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://ai-chatbot-challenge.onrender.com")
 API_BASE_URL = f"{BACKEND_URL}/api/v1"
 
 # Page configuration
